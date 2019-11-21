@@ -10,14 +10,29 @@ namespace AppEjerciciosBucles.Funciones
     {
         public static string saludar(int limite)
         {
-            StringBuilder cad = new StringBuilder("Saludos" +Environment.NewLine);
+            StringBuilder cad = new StringBuilder("Saludos" + Environment.NewLine);
             int i = 0;
             while (i < limite)
             {
                 i++;
-                cad.Append(i.ToString() + ": Hola"+Environment.NewLine);
+                cad.Append(i.ToString() + ": Hola" + Environment.NewLine);
             }
             return cad.ToString();
+        }
+        public static long factorial(int num)
+        {
+            int i = 0;
+            long fac = 1;
+            if (num == 1 || num == 0)
+                return 1;
+            do
+            {
+                i++;
+                fac = fac * i;
+
+            } while (i < num);
+
+            return fac;
         }
     }
 }
