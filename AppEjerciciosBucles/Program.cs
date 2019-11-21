@@ -16,7 +16,7 @@ namespace AppEjerciciosBucles
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmfactorial());
+            Application.Run(new frmBucleFor());
         }
     }
 }
