@@ -24,19 +24,38 @@ namespace AppEjerciciosBucles
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            Random r = new Random();
-            this.lstNotas.Sorted = false;
-            this.lstNotas.Items.Clear();
-            for (int i = 0; i <= 30; i++)
+            string msg;
+            long nota = estudiantes(out msg);
+            if (msg.Length == 0)
             {
-                int num = r.Next(20, 50);
-                this.lstNotas.Items.Add(num);
+                this.textBox2.Text = nota.ToString();
             }
+            else
+                this.textBox2.Text = msg;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.lstNotas.Text = "";
         }
-    }
+        private long estudiantes(out string msg)
+        {
+            msg = "";
+            Random r = new Random();
+            this.lstNotas.Sorted = false;
+            this.lstNotas.Items.Clear();
+            int suma = 0,pro;
+            for (int i = 0; i <= 30; i++)
+            {
+                int num = r.Next(20, 50);
+                this.lstNotas.Items.Add(i+1+". "+num);
+                suma = suma + num;
+            }
+            msg = "La suma es: " + suma;
+            pro = suma / 30;
+            this.textBox1.Text = pro.ToString();
+            return pro;
+        }
+}
 }
